@@ -4,6 +4,7 @@ var rename = require('gulp-rename');
 var shell = require('gulp-shell');
 var traceur = require('gulp-traceur');
 var webserver = require('gulp-webserver');
+var bower = require('gulp-bower');
 
 // run init tasks
 gulp.task('default', ['dependencies', 'angular2', 'js', 'html', 'css']);
@@ -25,6 +26,12 @@ gulp.task('watch', function() {
   gulp.watch('src/**/*.html', ['html']);
   gulp.watch('src/**/*.css', ['css']);
 });
+
+// bower dependencies
+// gulp.task('bower', function() {
+//   return bower()
+//     .pipe(gulp.dest('lib/'))
+// });
 
 // move dependencies into build dir
 gulp.task('dependencies', function() {
@@ -83,11 +90,11 @@ gulp.task('js', function() {
 // move html
 gulp.task('html', function() {
   return gulp.src('src/**/*.html')
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('build'));
 });
 
 // move css
 gulp.task('css', function() {
   return gulp.src('src/**/*.css')
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('build'));
 });

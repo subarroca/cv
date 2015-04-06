@@ -1,15 +1,19 @@
 import {Component, Template, bootstrap} from 'angular2/angular2';
 import {bind} from 'angular2/di';
 
+import {Info} from 'comps/info/info';
+import {Nav} from 'comps/nav/nav';
+
 @Component({
-  selector: 'cv2'
+  selector: 'cv'
 })
 
 @Template({
-  url: 'cv2.html'
+  url: 'cv.html',
+  directives:[Info, Nav]
 })
 
-class Cv2 {
+class Cv {
 
   constructor() {
     console.log('component mounted');
@@ -18,5 +22,5 @@ class Cv2 {
 }
 
 export function main() {
-  bootstrap(Cv2);
+  bootstrap(Cv);
 }

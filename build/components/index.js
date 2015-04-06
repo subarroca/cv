@@ -1,12 +1,10 @@
-System.register("index", ["angular2/angular2", "angular2/di", "comps/info/info", "comps/nav/nav"], function($__export) {
+System.register("components/index", ["angular2/angular2", "angular2/di"], function($__export) {
   "use strict";
-  var __moduleName = "index";
+  var __moduleName = "components/index";
   var Component,
       Template,
       bootstrap,
       bind,
-      Info,
-      Nav,
       Cv;
   function main() {
     bootstrap(Cv);
@@ -19,10 +17,6 @@ System.register("index", ["angular2/angular2", "angular2/di", "comps/info/info",
       bootstrap = $__m.bootstrap;
     }, function($__m) {
       bind = $__m.bind;
-    }, function($__m) {
-      Info = $__m.Info;
-    }, function($__m) {
-      Nav = $__m.Nav;
     }],
     execute: function() {
       Cv = (function() {
@@ -32,10 +26,7 @@ System.register("index", ["angular2/angular2", "angular2/di", "comps/info/info",
         return ($traceurRuntime.createClass)(Cv, {}, {});
       }());
       Object.defineProperty(Cv, "annotations", {get: function() {
-          return [new Component({selector: 'cv'}), new Template({
-            url: 'cv.html',
-            directives: [Info, Nav]
-          })];
+          return [new Component({selector: 'cv'}), new Template({url: 'cv.html'})];
         }});
     }
   };
