@@ -23,6 +23,7 @@ System.register("comps/cv-section/cv-section", ["angular2/angular2", "models/Sec
       Object.defineProperty(CvSection, "annotations", {get: function() {
           return [new Component({
             selector: 'cv-section',
+            properties: {section: 'section'},
             injectables: [Section]
           }), new View({
             templateUrl: 'comps/cv-section/cv-section.html',

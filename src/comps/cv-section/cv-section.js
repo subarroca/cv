@@ -5,7 +5,10 @@ import {  Section} from 'models/Section';
 
 @Component({
   selector: 'cv-section',
-  injectables: [Section]
+	properties: {
+	  section: 'section'
+	},
+	injectables: [Section]
 })
 
 @View({
