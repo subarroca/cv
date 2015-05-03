@@ -1,41 +1,57 @@
-import {  Component, Template, For} from 'angular2/angular2';
+import {  Component, View, Parent, For} from 'angular2/angular2';
 
-import {  Section} from 'services/Section';
+import {Cv} from 'comps/cv/cv';
+
+import {  Section} from 'models/Section';
+
 
 @Component({
   selector: 'nav',
-  services: [Section]
+  injectables: [Section]
 })
 
-@Template({
-  url: 'comps/nav/nav.html',
+@View({
+  templateUrl: 'comps/nav/nav.html',
   directives: [For]
 })
 
+
 export class Nav {
-  // section: Section;
+  // sections: Array <Section>
+  // cv
 
-  constructor(section: Section) {
-    this.sections = [{
+  constructor(@Parent() cv: Cv) {
+    this.cv = cv;
+
+    this.sections = [new Section({
       name: 'Goal',
-      path: 'goal'
-    },{
+      path: 'goal',
+      color: '#c00'
+    }), new Section({
       name: 'Experience',
-      path: 'experience'
-    },{
+      path: 'experience',
+      color: '#0c0'
+    }), new Section({
       name: 'Projects',
-      path: 'project'
-    },{
+      path: 'project',
+      color: '#00c'
+    }), new Section({
       name: 'Knowledge',
-      path: 'knowledge'
-    },{
+      path: 'knowledge',
+      color: '#cc0'
+    }), new Section({
       name: 'Languages',
-      path: 'languages'
-    },{
+      path: 'languages',
+      color: '#c0c'
+    }), new Section({
       name: 'Studies',
-      path: 'study'
-    }];
+      path: 'study',
+      color: '#0cc'
+    })];
+  }
 
+  loadSection(section: Section) {
+    this.cv.loadSection(section);
   }
 
 }

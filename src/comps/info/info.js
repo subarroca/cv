@@ -1,22 +1,22 @@
-import {Component, Template} from 'angular2/angular2';
+import {Component, View} from 'angular2/angular2';
 
-import {Person} from 'services/Person';
+import {Person} from 'models/Person';
 
 @Component({
   selector: 'info',
-  services:[Person]
+  injectables:[Person]
 })
 
-@Template({
-  url: 'comps/info/info.html'
+@View({
+  templateUrl: 'comps/info/info.html'
 })
 
 export class Info {
   // person: Person;
 
-  constructor(person:Person){
+  constructor(person: Person) {
 
-  	this.person=person;
+    this.person = person;
   }
 
 }

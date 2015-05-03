@@ -1,12 +1,12 @@
-System.register("services/Person", [], function($__export) {
+System.register("models/Person", [], function($__export) {
   "use strict";
-  var __moduleName = "services/Person";
+  var __moduleName = "models/Person";
   var Person;
   return {
     setters: [],
     execute: function() {
-      Person = $__export("Person", (function() {
-        var Person = function Person() {
+      Person = (function() {
+        function Person() {
           this.name = 'John Doe';
           this.image = 'image/john-doe.png';
           this.email = 'johndoe@gmail.com';
@@ -15,9 +15,10 @@ System.register("services/Person", [], function($__export) {
             linkedin: 'http://',
             github: 'http://'
           };
-        };
+        }
         return ($traceurRuntime.createClass)(Person, {}, {});
-      }()));
+      }());
+      $__export("Person", Person);
     }
   };
 });
